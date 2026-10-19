@@ -1,0 +1,46 @@
+{
+  "entities": {
+    "Gift": {
+      "title": "Gift",
+      "description": "Stock item representation",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "stock": { "type": "number" },
+        "initialStock": { "type": "number" },
+        "minStock": { "type": "number" },
+        "icon": { "type": "string" },
+        "description": { "type": "string" }
+      },
+      "required": ["id", "name", "stock", "minStock", "icon"]
+    },
+    "WithdrawalLog": {
+      "title": "WithdrawalLog",
+      "description": "Withdrawal transaction history",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "date": { "type": "string" },
+        "dateFormatted": { "type": "string" },
+        "giftName": { "type": "string" },
+        "giftId": { "type": "string" },
+        "qtyDisplay": { "type": "string" },
+        "person": { "type": "string" },
+        "reason": { "type": "string" },
+        "reserved": { "type": "string" }
+      },
+      "required": ["id", "date", "dateFormatted", "giftName", "qtyDisplay", "person", "reason"]
+    }
+  },
+  "firestore": {
+    "/gifts/{giftId}": {
+      "schema": { "$ref": "#/entities/Gift" },
+      "description": "Global stock items collection"
+    },
+    "/withdrawalLogs/{logId}": {
+      "schema": { "$ref": "#/entities/WithdrawalLog" },
+      "description": "Global withdrawal logs history collection"
+    }
+  }
+}

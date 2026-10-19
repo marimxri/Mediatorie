@@ -1,0 +1,6 @@
+{
+  "name": "Cristal Brindes - Gestão de Estoque",
+  "description": "Sistema de controle de estoque, catálogo e solicitações de retirada de brindes para Cristal Brindes",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
